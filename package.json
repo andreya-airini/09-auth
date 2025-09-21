@@ -16,6 +16,7 @@
     "cookies": "^0.9.1",
     "formik": "^2.4.6",
     "next": "^15.5.3",
+    "pagination": "^0.4.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-paginate": "^8.3.0",
