@@ -10,18 +10,7 @@ export const checkServerSession = async () => {
       Cookie: cookieStore.toString(),
     },
   });
-  // Повертаємо повний респонс, щоб middleware мав доступ до нових cookie
   return res;
-};
-
-export const fetchNoteByIdServer = async (id: string): Promise<Note> => {
-  const cookieStore = await cookies();
-  const { data } = await nextServer.get<Note>(`/notes/${id}`, {
-    headers: {
-      Cookie: cookieStore.toString(),
-    },
-  });
-  return data;
 };
 
 export const fetchNotesServer = async (
@@ -43,6 +32,16 @@ export const fetchNotesServer = async (
     },
   });
   return res.data;
+};
+
+export const fetchNoteByIdServer = async (id: string): Promise<Note> => {
+  const cookieStore = await cookies();
+  const { data } = await nextServer.get<Note>(`/notes/${id}`, {
+    headers: {
+      Cookie: cookieStore.toString(),
+    },
+  });
+  return data;
 };
 
 export const getMeServer = async () => {
