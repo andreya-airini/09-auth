@@ -1,8 +1,9 @@
 import Link from "next/link";
 import css from "./Header.module.css";
 import TagsMenu from "../TagsMenu/TagsMenu";
+import AuthNavigation from "../AuthNavigation/AuthNavigation";
 
-export default function Header() {
+export default async function Header() {
   return (
     <header className={css.header}>
       <Link href="/" aria-label="Home">
@@ -13,6 +14,7 @@ export default function Header() {
           <li>
             <Link href="/">Home</Link>
           </li>
+          <AuthNavigation />
           <li>
             <TagsMenu />
           </li>
